@@ -7,9 +7,10 @@ const connect = () => {
   });
   
   conn.on('connect', () => {
-    console.log("connected");
-    conn.setEncoding('utf8');
-    conn.write('Hello from client');
+    console.log("Successfully connected to game server");
+    conn.setEncoding('utf8');//no need to have this line becuase default encoding is utf8.
+    conn.write('Name: BK3');
+    
     conn.on('data', (data) => {
       console.log(`server says: ${data}`);
     });
@@ -18,7 +19,7 @@ const connect = () => {
 
   return conn;
 };
-
+console.log('connecting ...');
 module.exports = {
   net,
   connect
