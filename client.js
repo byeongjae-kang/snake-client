@@ -10,6 +10,11 @@ const connect = () => {
     console.log("Successfully connected to game server");
     conn.setEncoding('utf8');//no need to have this line becuase default encoding is utf8.
     conn.write('Name: BK3');
+    // setInterval(() => {
+    // conn.write('Move: up');
+    //
+    // }, 500);
+    
     
     conn.on('data', (data) => {
       console.log(`server says: ${data}`);
@@ -19,8 +24,14 @@ const connect = () => {
 
   return conn;
 };
+connect();
 console.log('connecting ...');
 module.exports = {
   net,
   connect
 };
+
+// "Move: up" - move up one square (unless facing down)
+// "Move: down" - move down one square (unless facing up)
+// "Move: left" - move left one square (unless facing right)
+// "Move: right" - move left one square (unless facing left)
