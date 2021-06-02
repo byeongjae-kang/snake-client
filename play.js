@@ -1,23 +1,6 @@
-const net = require('net');
+const net = require('./client').net;
+const connect = require('./client').connect;
 
-const connect = () => {
-  const conn = net.createConnection({
-    host:'135.23.222.131',
-    port: 50542
-  });
-  
-  conn.on('connect', () => {
-    console.log("connected");
-    conn.setEncoding('utf8');
-    conn.write('Hello from client');
-    conn.on('data', (data) => {
-      console.log(`server says: ${data}`);
-    });
-  });
-  
-
-  return conn;
-};
 
 console.log('connecting ...');
 connect();
