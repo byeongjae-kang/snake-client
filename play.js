@@ -2,8 +2,8 @@ const net = require('net');
 
 const connect = () => {
   const conn = net.createConnection({
-    host:'localhost',
-    port: 8888
+    host:'135.23.222.131',
+    port: 50542
   });
   
   conn.on('connect', () => {
