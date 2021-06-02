@@ -24,7 +24,7 @@ const connect = () => {
 
   return conn;
 };
-connect();
+
 console.log('connecting ...');
 module.exports = {
   net,
