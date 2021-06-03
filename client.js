@@ -10,10 +10,6 @@ const connect = () => {
     console.log("Successfully connected to game server");
     conn.setEncoding('utf8');//no need to have this line becuase default encoding is utf8.
     conn.write('Name: BK3');
-    // setInterval(() => {
-    // conn.write('Move: up');
-    //
-    // }, 500);
     conn.on('data', (data) => {
       console.log(`server says: ${data}`);
     });
